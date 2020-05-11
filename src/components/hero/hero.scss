@@ -1,0 +1,44 @@
+$tablet: 850px;
+$smartphone: 500px;
+$primaryColor: #2b7a78;
+$blackColor: #17252a;
+$secondaryColor: #feffff;
+$lightColor: #3aafa9;
+
+// Mixin
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin smartphone {
+  @media (max-width: #{$smartphone}) {
+    @content;
+  }
+}
+
+.hero {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  background: transparent;
+  text-align: center;
+  h2 {
+    font-size: 4em;
+    font-weight: 300 !important;
+    color: $secondaryColor;
+    @include smartphone() {
+      font-size: 2em;
+    }
+    line-height: 1;
+  }
+  span {
+    color: $secondaryColor;
+    font-size: 2em;
+    font-weight: 500;
+  }
+}

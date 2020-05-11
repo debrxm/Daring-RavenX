@@ -1,0 +1,63 @@
+$tablet: 850px;
+$smartphone: 500px;
+$primaryColor: #2b7a78;
+$blackColor: #17252a;
+$secondaryColor: #feffff;
+$lightColor: #3aafa9;
+
+@mixin smartphone {
+  @media (max-width: #{$smartphone}) {
+    @content;
+  }
+}
+
+.footer {
+  padding: 50px 10px;
+  padding-bottom: 30px;
+  text-align: center;
+  color: $blackColor;
+  margin-top: 30px;
+
+  @include smartphone() {
+    .footer {
+      img {
+        width: 70px;
+      }
+    }
+  }
+
+  h4 {
+    display: inline-block;
+  }
+
+  img {
+    height: 60px;
+  }
+  .logo {
+  }
+
+  .logo-border {
+    padding: 5px;
+    border: 2px solid $blackColor;
+    border-radius: 50%;
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 100%;
+    }
+  }
+
+  p {
+    color: $blackColor;
+    display: inline-block;
+
+    a {
+      color: $primaryColor;
+      font-weight: 600;
+    }
+  }
+}

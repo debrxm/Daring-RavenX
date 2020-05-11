@@ -1,0 +1,35 @@
+$tablet: 850px;
+$smartphone: 500px;
+$xsmartphone: 400px;
+$primaryColor: #2b7a78;
+$blackColor: #17252a;
+$secondaryColor: #feffff;
+$shadow: 0px 4px 20px rgba(64, 27, 32, 0.15);
+
+// Mixin
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin smartphone {
+  @media (max-width: #{$smartphone}) {
+    @content;
+  }
+}
+@mixin xsmartphone {
+  @media (max-width: #{$xsmartphone}) {
+    @content;
+  }
+}
+.tag-page {
+  width: 75%;
+  margin: auto;
+  @include smartphone() {
+    width: 90%;
+  }
+  @include xsmartphone() {
+    width: 98%;
+  }
+}

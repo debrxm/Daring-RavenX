@@ -1,0 +1,89 @@
+$tablet: 850px;
+$smartphone: 500px;
+$xsmartphone: 400px;
+$primaryColor: #2b7a78;
+$blackColor: #17252a;
+$secondaryColor: #feffff;
+$lightColor: #3aafa9;
+
+// Mixin
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin smartphone {
+  @media (max-width: #{$smartphone}) {
+    @content;
+  }
+}
+@mixin xsmartphone {
+  @media (max-width: #{$xsmartphone}) {
+    @content;
+  }
+}
+.latest-post {
+  width: 75%;
+  margin: auto;
+  @include smartphone() {
+    width: 90%;
+  }
+  @include xsmartphone() {
+    width: 98%;
+  }
+  .blog-area {
+    text-align: center;
+    .single-post {
+      height: 100%;
+      position: relative;
+      padding-bottom: 45px;
+      overflow: hidden;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+      #post-link {
+        padding: 30px 30px 10px;
+        font-size: 22px;
+        text-transform: capitalize;
+      }
+      .author {
+        padding: 0px 30px;
+      }
+    }
+  }
+
+  .output {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    justify-items: center;
+
+    @include tablet() {
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+
+    @include smartphone() {
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+  }
+  .load-more-btn {
+    cursor: pointer;
+    height: 30px;
+    padding: 6px 45px;
+    border: 1px solid #77323b;
+    border-radius: 30px;
+    font-size: 14px;
+    color: #77323b;
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+  .loader {
+    display: flex;
+    width: 100%;
+    img {
+      height: 50px;
+      width: 50px;
+      margin: auto;
+    }
+  }
+}

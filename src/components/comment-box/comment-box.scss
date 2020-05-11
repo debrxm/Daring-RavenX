@@ -1,0 +1,130 @@
+$tablet: 850px;
+$smartphone: 500px;
+$primaryColor: #2b7a78;
+$blackColor: #17252a;
+$secondaryColor: #feffff;
+$lightColor: #3aafa9;
+
+@mixin smartphone {
+  @media (max-width: #{$smartphone}) {
+    @content;
+  }
+}
+@mixin shrinkLabel {
+  top: -18px;
+  font-size: 13px;
+}
+.comment-box {
+  margin: auto;
+  margin-top: 20px;
+  max-width: 500px;
+  // color: $secondaryColor;
+  // text-align: center;
+  .head {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border: 1px solid $secondaryColor;
+    padding: 10px;
+    margin-top: 15px;
+  }
+  .form-input {
+    background: none;
+    background-color: transparent;
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    border: 1px solid #efd7d7;
+    margin: 10px 0 25px 0;
+  }
+
+  .text-area {
+    position: relative;
+
+    .expand {
+      height: 100px;
+    }
+
+    textarea {
+      background: none;
+      background-color: transparent;
+      font-size: 18px;
+      padding: 10px 10px 10px 5px;
+      display: block;
+      width: 100%;
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid gray;
+      margin: 25px 0;
+      color: gray;
+      transition: all 0.5s;
+
+      &:focus {
+        outline: none;
+        height: 100px;
+      }
+
+      &:focus ~ .form-input-label {
+        @include shrinkLabel();
+      }
+    }
+    .form-input-label {
+      color: gray;
+      font-size: 15px;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      left: 5px;
+      top: 10px;
+      transition: 300ms ease all;
+
+      &.shrink {
+        @include shrinkLabel();
+      }
+    }
+  }
+  .post-comment-control {
+    display: flex;
+    .post-comment {
+      text-align: center;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin: auto;
+      margin-top: 10px;
+      transition: all 0.3s;
+      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+      background: #c3d8f5;
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.3);
+      }
+      img {
+        width: 18px;
+        height: 18px;
+        margin-left: 5px;
+      }
+    }
+  }
+}
+.login {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+  border-bottom: 1px solid lighten($color: $primaryColor, $amount: 40);
+  border-bottom: 1px solid lighten($color: $primaryColor, $amount: 40);
+  padding: 10px;
+  span {
+    cursor: pointer;
+    color: $primaryColor;
+    font-size: 12px;
+    margin: 0 5px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+}
