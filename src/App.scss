@@ -76,7 +76,31 @@ a {
 body {
   background-color: #ffffff;
 }
+$tablet: 850px;
+$smartphone: 500px;
+$xsmartphone: 400px;
+$primaryColor: #2b7a78;
+$blackColor: #17252a;
+$secondaryColor: #feffff;
+$lightColor: #3aafa9;
 
+// Mixin
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin smartphone {
+  @media (max-width: #{$smartphone}) {
+    @content;
+  }
+}
+@mixin xsmartphone {
+  @media (max-width: #{$xsmartphone}) {
+    @content;
+  }
+}
 .not-avail,
 .loading {
   display: flex;
@@ -100,6 +124,9 @@ body {
 }
 .wrapper {
   min-height: 100vh;
+  @include smartphone() {
+    margin: 100px;
+  }
 }
 /* .section {
   padding: 70px 0 40px;

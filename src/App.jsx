@@ -22,7 +22,8 @@ import Homepage from './pages/homepage/homepage';
 import Aboutpage from './pages/aboutpage/aboutpage';
 import Blogpage from './pages/blogpage/blogpage';
 import NotFound from './pages/404/404';
-import './App.css';
+import './App.scss';
+import Bookpage from './pages/book/bookpage';
 
 class App extends React.Component {
   state = {
@@ -106,13 +107,16 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <Switch>
-          <Route exact path="/" component={Homepage} />
-          <Route path="/blog" component={Blogpage} />
-          <Route exact path="/about" component={Aboutpage} />
-          <Route exact path="/contact" component={Contactpage} />
-          <Route component={NotFound} />
-        </Switch>
+        <div className="wapper">
+          <Switch>
+            <Route exact path="/" component={Homepage} />
+            <Route path="/blog" component={Blogpage} />
+            <Route exact path="/about" component={Aboutpage} />
+            <Route exact path="/contact" component={Contactpage} />
+            <Route exact path="/book" component={Bookpage} />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
         <Footer />
       </div>
     );

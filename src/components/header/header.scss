@@ -20,15 +20,23 @@ $lightColor: #3aafa9;
 
 .header {
   position: relative;
-  height: 60vh;
+  // height: 60vh;
   padding-top: 20px;
+  @include smartphone() {
+    padding: 0;
+  }
+  .navbar-lg {
+    @include smartphone() {
+      display: none;
+    }
+  }
   a {
     display: flex;
     justify-content: center;
     align-items: center;
 
     .branding {
-      height: 150px;
+      height: 120px;
       margin: auto;
       margin-bottom: 10px;
       display: flex;
@@ -44,14 +52,20 @@ $lightColor: #3aafa9;
       }
     }
   }
-  .navbar {
+  .navbar-sm {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     z-index: 6;
     padding: 20px 0 10px 0;
+    height: 70px;
     transition: all 0.3s;
+    display: none;
+    // background: #000000a2;
+    @include smartphone() {
+      display: block;
+    }
 
     .brand {
       border-radius: 50%;
@@ -64,6 +78,9 @@ $lightColor: #3aafa9;
         display: flex;
         align-items: center;
         font-size: 18px;
+        img {
+          width: 60px;
+        }
       }
     }
 
@@ -81,17 +98,54 @@ $lightColor: #3aafa9;
         justify-content: space-between;
         align-items: center;
       }
+      .menu-open,
+      .menu-close {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        margin-top: 15px;
+        height: 30px;
+        width: 30px;
+        span {
+          width: 30px;
+          height: 3px;
+          background-color: $primaryColor;
+          position: absolute;
+          right: 0;
+          transition: all 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+        }
+      }
+      .menu-open {
+        .one {
+          top: 1px;
+        }
+        .two {
+          top: 10px;
+          opacity: 1;
+        }
+        .three {
+          top: 19px;
+        }
+      }
+      .menu-close {
+        margin-top: 30px;
+        .one {
+          transform: rotate(45deg);
+        }
+        .two {
+          display: none;
+          opacity: 0;
+        }
+        .three {
+          transform: rotate(-45deg);
+        }
+      }
     }
 
-    .logo-icon {
-      height: 40px;
-    }
-
-    .menu-button {
-      width: 25px;
-      cursor: pointer;
-    }
-
+    // .menu-button {
+    //   width: 20px;
+    //   cursor: pointer;
+    // }
     .options {
       width: 100%;
       text-align: center;

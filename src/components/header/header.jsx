@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SideNav from '../side-nav/side-nav';
-import menu from '../../assets/menu.svg';
-import close from '../../assets/close.svg';
 import logo from '../../assets/logo.png';
 // import instagram from '../../assets/instagram.svg';
 // import facebook from '../../assets/facebook.svg';
@@ -20,7 +18,7 @@ const Header = () => {
     <>
       {isShow ? <SideNav handleToggleSidebar={toggleMenu} /> : null}
       <header className="header">
-        <nav>
+        <nav className="navbar-lg">
           <Link to="/">
             <div className="branding">
               <img src={logo} alt="logo" />
@@ -29,24 +27,25 @@ const Header = () => {
           </Link>
           <Navigation />
         </nav>
-        {/* <nav className={`${isShow ? 'dark' : ''} navbar`}>
+        <nav className={`${isShow ? 'dark' : ''} navbar-sm`}>
           <div className="nav-links container">
             <div className="show">
               <div className="brand">
                 <Link to="/">
-                  <h3>Daring RavenX</h3>
+                  <img src={logo} alt="logo" />
                 </Link>
               </div>
-
-              <img
-                src={isShow ? close : menu}
-                className="menu-button"
-                alt="MenuIcon"
+              <div
+                className={isShow ? 'menu-close' : 'menu-open'}
                 onClick={toggleMenu}
-              />
+              >
+                <span className="one"></span>
+                <span className="two"></span>
+                <span className="three"></span>
+              </div>
             </div>
           </div>
-        </nav> */}
+        </nav>
         {/* <Hero /> */}
       </header>
     </>

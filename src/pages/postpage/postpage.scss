@@ -23,7 +23,7 @@ $secondaryColor: #feffff;
   width: 70% !important;
   margin: auto !important;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-  background-color: $secondaryColor;
+  // background-color: $secondaryColor;
   padding: 0 20px;
   padding-bottom: 30px;
   @include tablet() {
@@ -35,7 +35,7 @@ $secondaryColor: #feffff;
   .full-blog {
     width: 100%;
     margin: auto;
-    margin-top: -150px;
+    margin-top: -50px;
     padding-top: 50px;
     text-align: left;
     @include smartphone() {
@@ -61,7 +61,7 @@ $secondaryColor: #feffff;
         height: 70px;
         width: 70px;
         border-radius: 50%;
-        border: 6px solid #fff;
+        border: 6px solid $primaryColor;
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
         img {
           width: 100%;
@@ -79,7 +79,7 @@ $secondaryColor: #feffff;
         h6 {
           font-weight: 500;
           font-size: 15px;
-          color: darken($color: $secondaryColor, $amount: 40);
+          color: $primaryColor;
           @include smartphone() {
             font-size: 12px;
           }

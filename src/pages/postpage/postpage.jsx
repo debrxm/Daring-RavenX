@@ -90,7 +90,7 @@ class PostPage extends React.Component {
     return (
       <div className="post-page container">
         <Helmet>
-          <title>Jimoh's Blog &mdash; {title}</title>
+          <title>Daring RavenX &mdash; {title}</title>
           <meta title="keywords" content={`${tag}, ${title}`} />
           <meta name="description" content={`${title} `} />
           <link rel="icon" href="../../../public/favicon.ico" />
@@ -100,33 +100,32 @@ class PostPage extends React.Component {
           />
           <meta property="og:type" content="website" />
           <meta name="description" content="" />
-          <meta property="og:site_name" content="Jimoh's Blog" />
+          <meta property="og:site_name" content="Daring RavenX" />
           <meta
             property="og:url"
             content={`https://www.jimohblog.com.ng/${title}`}
           />
         </Helmet>
         <div className="full-blog">
+          <div className="full-blog-image">
+            <img src={image} alt="Blog img" />
+          </div>
           <h1 className="title">{title}</h1>
           <div className="post-info">
             <div className="left-area">
               <img src={userIco} alt="Profile" />
             </div>
             <div className="middle-area">
-              <b id="blog-author">Jimoh Abdul-Rahman</b>
+              <b id="blog-author">Admin</b>
               <br />
               <h6 className="date" id="blog-date">
                 {date.toString().toString().split(' ').slice(0, 5).join(' ')}
               </h6>
             </div>
           </div>
-
-          <div className="full-blog-image">
-            <img src={image} alt="Blog img" />
-          </div>
           <div className="blog-content">{renderHTML(`${content}`)}</div>
         </div>
-        <ProgressIndicator />
+        {/* <ProgressIndicator /> */}
         <div className="full-blog-footer">
           <div className="share">
             <span>Share This Post</span>

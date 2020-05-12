@@ -5,7 +5,7 @@ import { createStructuredSelector } from 'reselect';
 import { selectComments, selectViews } from '../../redux/blog/blog.selector';
 import renderHTML from 'react-render-html';
 import comment from '../../assets/comment.svg';
-import view from '../../assets/view.svg';
+// import view from '../../assets/view.svg';
 import './post-preview.scss';
 class PostPreview extends React.Component {
   state = {
@@ -78,11 +78,7 @@ class PostPreview extends React.Component {
                 {title}
               </h4>
             </Link>
-            <h6 className="author">by Jimoh Abdul-Rahman</h6>
             <br />
-            <h5 className="tag">
-              Category: <span>{tag.replace('_', ' ')}</span>
-            </h5>
 
             <p className="preview-text">
               {renderHTML(content).props
@@ -94,7 +90,7 @@ class PostPreview extends React.Component {
                     .props.children[0].split(' ')
                     .slice(0, 12)
                     .join(' ')}
-              ...{' '}
+              ... <br />
               <Link
                 to={`/blog/${tag.toString().toLowerCase()}/${title
                   .split(' ')
@@ -102,7 +98,7 @@ class PostPreview extends React.Component {
                   .toLowerCase()}`}
               >
                 <span className="read-more" onClick={handleRouting}>
-                  read more
+                  Read More
                 </span>
               </Link>
             </p>
@@ -115,13 +111,10 @@ class PostPreview extends React.Component {
                 : 0}{' '}
               Comments
             </span>
-            <span className="post-footer-comment">
-              <img src={view} alt="Comment Icon" />
-              {this.state.views.view
-                ? this.state.views.view.views.length
-                : 0}{' '}
-              Views
-            </span>
+
+            <h5 className="tag">
+              <span>{tag.replace('_', ' ')}</span>
+            </h5>
           </div>
         </div>
       </div>

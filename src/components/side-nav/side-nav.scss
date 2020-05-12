@@ -29,13 +29,13 @@ $lightColor: #3aafa9;
   display: flex;
   .links {
     height: 100%;
-    width: 300px;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: baseline;
     justify-content: baseline;
     text-align: left;
-    background-color: #000000;
+    background-color: #17252ab9;
     padding-left: 2%;
     transform: translateX(300px);
     animation: animateSideNav 0.3s linear forwards;

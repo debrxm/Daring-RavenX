@@ -12,6 +12,9 @@ const SideNav = ({ handleToggleSidebar }) => {
         <Link to="/blog" className="option" onClick={handleToggleSidebar}>
           BLOG
         </Link>
+        <Link to="/book" className="option" onClick={handleToggleSidebar}>
+          BOOK
+        </Link>
         <Link to="/about" className="option" onClick={handleToggleSidebar}>
           ABOUT
         </Link>

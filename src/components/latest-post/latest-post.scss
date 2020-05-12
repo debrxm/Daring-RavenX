@@ -34,19 +34,89 @@ $lightColor: #3aafa9;
   }
   .blog-area {
     text-align: center;
-    .single-post {
-      height: 100%;
-      position: relative;
-      padding-bottom: 45px;
-      overflow: hidden;
-      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-      #post-link {
-        padding: 30px 30px 10px;
-        font-size: 22px;
-        text-transform: capitalize;
+    .latest-post-preview {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 50px 0 60px 0;
+      @include smartphone() {
+        flex-direction: column;
+        margin: 20px 0 60px 0;
       }
-      .author {
-        padding: 0px 30px;
+      .latest-post-preview-image {
+        height: 400px;
+        width: 50vw;
+        clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+        @include smartphone() {
+          width: 100%;
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .latest-post-preview-text {
+        position: relative;
+        margin-left: 20px;
+        height: 100%;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        @include smartphone() {
+          margin: 0;
+        }
+        .text-head {
+          margin-bottom: 30px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 60px;
+          .flag {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: $primaryColor;
+            text-shadow: 0 0 10px #ffffff;
+          }
+          .date {
+            font-size: 1rem;
+            color: darken($color: #ffffff, $amount: 50);
+          }
+        }
+        .title {
+          color: $blackColor;
+          font-weight: 700;
+          font-size: calc(1.375rem + 1.5vw);
+          margin-bottom: 1.5rem;
+          margin-bottom: 1.5rem;
+        }
+        .preview-text {
+          line-height: 1.5;
+          color: $blackColor;
+          text-align: left;
+          margin-bottom: 1.5rem;
+          font-size: 1.1rem;
+          font-weight: 400;
+          .read-more {
+            font-weight: 700;
+            color: $primaryColor;
+          }
+        }
+        .tag {
+          text-transform: capitalize;
+          font-weight: 700;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: $secondaryColor;
+          border-radius: 0;
+          font-size: 0.8rem;
+          background-color: $primaryColor !important;
+          padding: 0.40625rem 1.25rem;
+          width: 80px;
+          // display: inline;
+        }
       }
     }
   }
@@ -63,6 +133,10 @@ $lightColor: #3aafa9;
 
     @include smartphone() {
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+    .post-preview {
+      &:first-child {
+      }
     }
   }
   .load-more-btn {
