@@ -6,7 +6,7 @@
     "cra-template": "1.0.3",
     "device-uuid": "^1.0.4",
     "firebase": "^7.14.2",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "nuka-carousel": "^4.6.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
